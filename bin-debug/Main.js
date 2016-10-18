@@ -28,40 +28,11 @@
 //////////////////////////////////////////////////////////////////////////////////////
 var Main = (function (_super) {
     __extends(Main, _super);
-    /*_stateMachine:StateMachine;
-    _label:egret.TextField;
-    _body:egret.Shape;*/
     function Main() {
         _super.call(this);
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     var d = __define,c=Main,p=c.prototype;
-    /*
-        private wolf:egret.Bitmap;
-        private speed:number = 0.05;
-        private timeOnEnterFrame = 0;
-    
-        private onLoad(event:egret.Event){
-            var wolf:egret.Bitmap = new egret.Bitmap(RES.getRes("stand"));
-            this.addChild(wolf);
-            this.wolf = wolf;
-    
-            this.addEventListener(egret.Event.ENTER_FRAME,this.onEnterFrame,this);
-            this.timeOnEnterFrame = egret.getTimer();
-        }
-    
-        private onEnterFrame(e:egret.Event){
-            
-            var now = egret.getTimer();
-            var time = this.timeOnEnterFrame;
-    
-            var pass = now-time;
-            //console.log("onEnterFrame:",(1000/pass).toFixed(5));
-            this.wolf.x += this.speed*pass;
-    
-            this.timeOnEnterFrame = egret.getTimer();
-        }
-    */
     p.Move = function (picture, X, Y) {
         var SI = egret.Tween.get(picture);
         SI.to({ x: X, y: Y }, 500);
@@ -148,8 +119,9 @@ var Main = (function (_super) {
         wolf.x = 50;
         wolf.y = 700;*/
         this.Player = new PlayerRole();
+        this.Player.x = 150;
+        this.Player.y = 700;
         this.addChild(this.Player);
-        this.Player.x = this.Player.y = 300;
         this.Player.IdleAnimation();
         this.touchEnabled = true;
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.Moveba, this);
@@ -278,6 +250,9 @@ var PlayerRole = (function (_super) {
             else {
                 count = 0;
             }
+            if (this.Modle != M) {
+                timer.stop();
+            }
         }
     };
     p.MoveAnimation = function (x, y) {
@@ -343,8 +318,8 @@ var PlayerMoveState = (function () {
         else {
             this.Player.scaleX = -1;
         }
-        var zz = Math.pow(X * X + Y * Y, 0.5);
-        var time = zz / this.Player.MoveSpeed;
+        var Z = Math.pow(X * X + Y * Y, 0.5);
+        var time = Z / this.Player.MoveSpeed;
         this.timer = new egret.Timer(50, time);
         this.LeastTime = time;
         this.timer.addEventListener(egret.TimerEvent.TIMER, function () {

@@ -35,40 +35,11 @@ class Main extends egret.DisplayObjectContainer {
      */
     private loadingView:LoadingUI;
 
-    /*_stateMachine:StateMachine;
-    _label:egret.TextField;
-    _body:egret.Shape;*/
-
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
-/*
-    private wolf:egret.Bitmap;
-    private speed:number = 0.05;
-    private timeOnEnterFrame = 0;
 
-    private onLoad(event:egret.Event){
-        var wolf:egret.Bitmap = new egret.Bitmap(RES.getRes("stand"));
-        this.addChild(wolf);
-        this.wolf = wolf;
-
-        this.addEventListener(egret.Event.ENTER_FRAME,this.onEnterFrame,this);
-        this.timeOnEnterFrame = egret.getTimer();
-    }
-
-    private onEnterFrame(e:egret.Event){
-        
-        var now = egret.getTimer();
-        var time = this.timeOnEnterFrame;
-
-        var pass = now-time;
-        //console.log("onEnterFrame:",(1000/pass).toFixed(5));
-        this.wolf.x += this.speed*pass;
-
-        this.timeOnEnterFrame = egret.getTimer();
-    }
-*/
     private Move(picture:egret.Bitmap,X:number,Y:number):void{
         var SI = egret.Tween.get(picture);
         SI.to({x:X,y:Y}, 500);
@@ -170,9 +141,9 @@ class Main extends egret.DisplayObjectContainer {
         wolf.y = 700;*/
 
         this.Player=new PlayerRole();
+        this.Player.x = 150;
+        this.Player.y = 700;
         this.addChild(this.Player);
-     
-        this.Player.x= this.Player.y=300;
        
         this.Player.IdleAnimation();
 
@@ -312,7 +283,8 @@ class PlayerRole extends egret.DisplayObjectContainer {
             Picture.texture=Array[count];
             if(count<Array.length-1) {
                 count++;}
-            else{count=0;}   
+            else{count=0;}
+            if(this.Modle!=M){timer.stop();}   
         }  
     }
 
@@ -385,8 +357,8 @@ class PlayerMoveState implements State{
         var X=this._targetX- this.Player.x;
         var Y=this._targetY- this.Player.y;
         if(X>0){this.Player.scaleX=1;}else{this.Player.scaleX=-1;}
-        var zz=Math.pow(X*X+Y*Y,0.5);
-        var time:number=zz/this.Player.MoveSpeed;
+        var Z=Math.pow(X*X+Y*Y,0.5);
+        var time:number=Z/this.Player.MoveSpeed;
         this.timer = new egret.Timer(50, time);
         this.LeastTime=time;
         this.timer.addEventListener(egret.TimerEvent.TIMER,()=>{
