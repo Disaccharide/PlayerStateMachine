@@ -1,0 +1,120 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,map_png,run_01_png,run_02_png,run_03_png,run_04_png,run_05_png,run_06_png,run_07_png,run_08_png,stand_01_png,stand_02_png,stand_03_png,stand_04_png,stand_05_png,stand_06_png,stand_07_png,stand_08_png,stand_09_png,stand_10_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "assets/bg.jpg"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "map_png",
+			"type": "image",
+			"url": "assets/map.png"
+		},
+		{
+			"name": "run_01_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_01.png"
+		},
+		{
+			"name": "run_02_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_02.png"
+		},
+		{
+			"name": "run_03_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_03.png"
+		},
+		{
+			"name": "run_04_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_04.png"
+		},
+		{
+			"name": "run_05_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_05.png"
+		},
+		{
+			"name": "run_06_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_06.png"
+		},
+		{
+			"name": "run_07_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_07.png"
+		},
+		{
+			"name": "run_08_png",
+			"type": "image",
+			"url": "assets/wolf/run/run_08.png"
+		},
+		{
+			"name": "stand_01_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_01.png"
+		},
+		{
+			"name": "stand_02_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_02.png"
+		},
+		{
+			"name": "stand_03_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_03.png"
+		},
+		{
+			"name": "stand_04_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_04.png"
+		},
+		{
+			"name": "stand_05_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_05.png"
+		},
+		{
+			"name": "stand_06_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_06.png"
+		},
+		{
+			"name": "stand_07_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_07.png"
+		},
+		{
+			"name": "stand_08_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_08.png"
+		},
+		{
+			"name": "stand_09_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_09.png"
+		},
+		{
+			"name": "stand_10_png",
+			"type": "image",
+			"url": "assets/wolf/stand/stand_10.png"
+		}
+	]
+}
